@@ -53,6 +53,15 @@ const Homepage = () => {
                 <div>age</div>
                 <Input type="number" name="age" onChange={(e) => handleInput(e)} />
             </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto', gap: '10px'}}>
+                <div style={{ height: '50px', backgroundColor: 'blue'}}></div>
+                <div style={{ height: '50px', backgroundColor: 'blue'}}></div>
+                <div style={{ height: '50px', backgroundColor: 'blue'}}></div>
+                <div style={{ height: '50px', gridColumn: 'span 3 / span 3', backgroundColor: 'blue'}}></div>
+                <div style={{ height: '50px', backgroundColor: 'blue'}}></div>
+                <div style={{ height: '50px', backgroundColor: 'blue'}}></div>
+            </div>
         </div>
     );
 }
