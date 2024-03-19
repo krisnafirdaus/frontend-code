@@ -1,5 +1,16 @@
 import { useState } from "react"
+import styled from "styled-components"
 import "./index.css"
+
+import Button from "../../components/Button"
+
+const Input = styled.input `
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px
+`
 
 const Homepage = () => {
     const [state, setState] = useState(0)
@@ -7,6 +18,7 @@ const Homepage = () => {
         nama: "Andi",
         age: 20
     })
+    const gap = false
 
     const handleClick = () => {
         setState(state + 1)
@@ -27,21 +39,19 @@ const Homepage = () => {
         })
     }
 
-    console.log(data)
-
     return (
         <div className="homepage">
             <h1>Homepage</h1>
             <h2>{state}</h2>
-            <button onClick={handleClick}>Click me</button>
-            <button onClick={handleKurang}>Kurang</button>
+            <Button title={'Click Me'} onClick={handleClick} />
+            <Button title={'Kurang'} onClick={handleKurang} />
 
-            <div>
+            <div style={{ marginTop: gap ? '10px' : '24px' }}>
                 <div>Email</div>
-                <input name="nama" onChange={(e) => handleInput(e)} />
+                <Input  name="nama" onChange={(e) => handleInput(e)} />
 
                 <div>age</div>
-                <input type="number" name="age" onChange={(e) => handleInput(e)} />
+                <Input type="number" name="age" onChange={(e) => handleInput(e)} />
             </div>
         </div>
     );
