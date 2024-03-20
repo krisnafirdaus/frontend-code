@@ -1,10 +1,11 @@
 import './style.css'
+import { Container } from '@mui/material'
 import ImageNavbar from "../../assets/image-navbar-confirm.png"
 import ImageBody from "../../assets/image-body-confirm.png"
 
 const EmailConfirmation = () => {
     return (
-        <div>
+        <Container>
             <div className="navbar-email-confirmation">
                 <div className='flex items-center'>
                     <div className='mr-10'><img src={ImageNavbar} /></div>
@@ -22,7 +23,7 @@ const EmailConfirmation = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Container>
     )
 }
 

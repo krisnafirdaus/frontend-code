@@ -1,7 +1,7 @@
 import './App.css'
-import Homepage from "./pages/homepage"
+// import Homepage from "./pages/homepage"
 import EmailConfirmation from "./pages/email-confirmation"
-
+// import Detail from "./pages/detail/detail"
 
 function App() {
 
@@ -9,6 +9,7 @@ function App() {
     <>
       {/* <Homepage /> */}
       <EmailConfirmation />
+      {/* <Detail /> */}
     </>
   )
 }
