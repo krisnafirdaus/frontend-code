@@ -6,7 +6,10 @@ const ForgotPassword = () => {
 		password: '',
 		confirmPassword: ''
 	})
-	const [error, setError] = useState('')
+	const [error, setError] = useState({
+		password: '',
+		confirmPassword: ''
+	})
 
 	const handleInput = (e) => {
 		const name = e.target.name
@@ -18,9 +21,28 @@ const ForgotPassword = () => {
 		})
 	}
 
+	const handleReset = () => {
+		setError({
+			password: '',
+			confirmPassword: ''
+		})
+	}
+
 	const handleClick = () => {
-		if(!data.password || !data.confirmPassword) {
-			setError('Tolong isi inputan ini')
+		handleReset();
+		if(!data.password && !data.confirmPassword) {
+			setError({
+				password: 'Password tidak boleh kosong',
+				confirmPassword: 'Confirm Password tidak boleh kosong'
+			})
+		} else if(!data.password){
+			setError({
+				password: 'Password tidak boleh kosong'
+			})
+		} else if(!data.confirmPassword) {
+			setError({
+				confirmPassword: 'Confirm Password tidak boleh kosong'
+			})
 		}
 	}
 
@@ -36,8 +58,8 @@ const ForgotPassword = () => {
 						width={'50%'}
 					>
 						<Typography variant='h5' marginBottom={'60px'}>Create Password</Typography>
-						<TextField name='password' error={error}  onChange={handleInput} variant='outlined' label='New Password'  helperText={error} sx={{ marginBottom: '24px'}} />
-						<TextField name='confirmPassword' error={error} onChange={handleInput} variant='outlined' label='Confirm New Password' helperText={error}/>
+						<TextField name='password' error={error.password}  onChange={handleInput} variant='outlined' label='New Password'  helperText={error.password} sx={{ marginBottom: '24px'}} />
+						<TextField name='confirmPassword' error={error.confirmPassword} onChange={handleInput} variant='outlined' label='Confirm New Password' helperText={error.confirmPassword}/>
 
 						<Box
 							marginTop={'40px'}
