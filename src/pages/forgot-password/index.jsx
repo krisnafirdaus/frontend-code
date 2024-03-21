@@ -6,6 +6,7 @@ const ForgotPassword = () => {
 		password: '',
 		confirmPassword: ''
 	})
+	const [error, setError] = useState('')
 
 	const handleInput = (e) => {
 		const name = e.target.name
@@ -18,7 +19,9 @@ const ForgotPassword = () => {
 	}
 
 	const handleClick = () => {
-		console.log(data)
+		if(!data.password || !data.confirmPassword) {
+			setError('Tolong isi inputan ini')
+		}
 	}
 
 	return (
@@ -33,8 +36,8 @@ const ForgotPassword = () => {
 						width={'50%'}
 					>
 						<Typography variant='h5' marginBottom={'60px'}>Create Password</Typography>
-						<TextField name='password' onChange={handleInput} variant='outlined' label='New Password' sx={{ marginBottom: '24px'}} />
-						<TextField name='confirmPassword' onChange={handleInput} variant='outlined' label='Confirm New Password' />
+						<TextField name='password' error={error}  onChange={handleInput} variant='outlined' label='New Password'  helperText={error} sx={{ marginBottom: '24px'}} />
+						<TextField name='confirmPassword' error={error} onChange={handleInput} variant='outlined' label='Confirm New Password' helperText={error}/>
 
 						<Box
 							marginTop={'40px'}
