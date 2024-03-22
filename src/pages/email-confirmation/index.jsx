@@ -1,12 +1,11 @@
 import {useEffect} from 'react'
 import './style.css'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Container } from '@mui/material'
 import ImageNavbar from "../../assets/image-navbar-confirm.png"
 import ImageBody from "../../assets/image-body-confirm.png"
 
 const EmailConfirmation = () => {
-    const location = useLocation()
     const navigate = useNavigate()
 
     const handleRedirect = () => {
