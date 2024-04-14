@@ -3,6 +3,7 @@ import './App.css'
 // import EmailConfirmation from "./pages/email-confirmation"
 // import Detail from "./pages/detail/detail"
 import ForgotPassword from "./pages/forgot-password"
+import Books from "./pages/books";
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       {/* <EmailConfirmation /> */}
       {/* <Detail /> */}
 			<ForgotPassword />
+			<Books />
     </>
   )
 }
