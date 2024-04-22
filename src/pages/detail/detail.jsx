@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { styled } from '@mui/material/styles';
 import { InputAdornment, Box, Paper } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import CardComponent from "../../components/CardComponent"
 
 const Item = styled(Paper)(({ theme }) => ({
