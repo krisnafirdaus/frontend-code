@@ -8,13 +8,16 @@ import Books from './pages/books'
 import CustomHooks from './pages/custom-hooks'
 import { Routes, Route } from 'react-router-dom'
 import Layout from "./layouts"
+import PrivateRoute from "./layouts/PrivateRoute";
 
 function App() {
 
   return (
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Homepage />} />
+					<Route element={<PrivateRoute />}>
+          	<Route index element={<Homepage />} />
+					</Route>
           <Route path='/email-confirmation' element={<EmailConfirmation />} />
           <Route path='/detail' element={<Detail />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
