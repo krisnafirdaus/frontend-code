@@ -42,9 +42,8 @@ const Detail = () => {
            >
 						 <Grid container spacing={0}>
 								{data.map((item, index) => {
-									console.log(index)
 									return (
-										<Grid key={index} xs={4}>
+										<Grid key={index} xs={12} sm={6} md={4} >
 											<Item>
 												<CardComponent
 													title={item.title}
