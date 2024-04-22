@@ -39,6 +39,8 @@ const Homepage = () => {
         })
     }
 
+		console.log(import.meta.env.VITE_SOME_KEY);
+
     return (
         <div className="homepage">
             <h1>Homepage</h1>
