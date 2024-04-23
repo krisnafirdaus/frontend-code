@@ -9,17 +9,19 @@ import CustomHooks from './pages/custom-hooks'
 import StateManagement from './pages/state-management'
 import { Routes, Route } from 'react-router-dom'
 import Layout from "./layouts"
-import PrivateRoute from "./layouts/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
       <Routes>
         <Route path="/" element={<Layout />}>
-					<Route element={<PrivateRoute />}>
-          	<Route index element={<Homepage />} />
-					</Route>
+					<Route path="/" element={<PrivateRoute />}>
+						<Route index element={<Homepage />} />
+        	</Route>
           <Route path='/email-confirmation' element={<EmailConfirmation />} />
-          <Route path='/detail' element={<Detail />} />
+					<Route path="/detail" element={<PrivateRoute />}>
+          	<Route index element={<Detail />} />
+					</Route>
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/:id' element={<DetailProduk />} />
 					<Route path='/book' element={<Books />} />

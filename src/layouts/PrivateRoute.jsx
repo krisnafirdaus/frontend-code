@@ -4,7 +4,6 @@ import useToken from '../hooks/useToken';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const token = useToken('token'); 
-	console.log(token)
 	const location = useLocation();
 
   if (!token) {
