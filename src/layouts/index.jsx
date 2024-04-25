@@ -1,4 +1,5 @@
 import { Outlet, Link, useLocation} from 'react-router-dom'
+import { useStore } from '../store/useStore'
 
 const Layout = () => {
     const {pathname} = useLocation()
@@ -21,9 +22,10 @@ const Layout = () => {
             name: 'Forgot'
         }
     ]
+    const {count} = useStore();
 
     return (
-        <div>
+        <div style={{ background: count === 'white' ? 'white' : 'black'}}>
            <nav>
                 <ul>
                     {navData.map((item, index) => (
